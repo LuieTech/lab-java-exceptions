@@ -31,7 +31,8 @@ class PersonListTest {
 
     @Test
     public void testFindByNameThrowsExceptionForImproperlyFormattedName() {
-        persons.findByName("JohnDoe");
+
+        assertThrows(IllegalArgumentException.class, () -> persons.findByName("JohnDoe"));
     }
 
     @Test

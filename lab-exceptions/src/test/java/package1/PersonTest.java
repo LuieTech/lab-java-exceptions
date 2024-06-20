@@ -11,7 +11,9 @@ class PersonTest {
     @Test
     void testSetAge(){
         Person person = new Person(1, "John Doe", 30, "Engineer");
-        person.setAge(-1); // This should throw an IllegalArgumentException
+        assertThrows(IllegalArgumentException.class, () -> {
+            person.setAge(-1);
+        });
     }
 
 
